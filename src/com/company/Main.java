@@ -1,26 +1,19 @@
 package com.company;
 
 import java.util.Scanner;
-//Zmieniony ignore
+
 class Main
 {
-    public static void main(String arg[])
-    {
-        int n;
-        Scanner sc=new Scanner(System.in);
+    public static void main(String arg[]) {
 
-        System.out.println("Enter a number :");
-        n=sc.nextInt();
-
-        System.out.println("Add Up To("+n+") ----->"+addUpTo(n));
+    System.out.print(sumRecurency((short) 5));
     }
-    static int addUpTo(int n)
-    {
-        int sum=0;
-        for(int i=1;i<=n;i++)
-        {
-            sum=sum+i;
+
+    private static int sumRecurency(short number){
+
+        if(number >= 0 ){
+            return number + sumRecurency((short) (number-1));
         }
-        return sum;
+        return 0;
     }
 }
